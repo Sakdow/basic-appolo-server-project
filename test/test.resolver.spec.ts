@@ -13,16 +13,16 @@ describe('integration test', () => {
     describe('test',() => {
         test('test', async () => {
 
-            const QUERY_me = gql`
-                mutation me($userInput: UserSignupInput!) {
+            const MUTATE_testResolver = gql`
+                mutation testResolver($userInput: UserSignupInput!) {
                     testResolver
                 }
             `;
 
             const res = await server.executeOperation(
                 {
-                    query: QUERY_me,
-                    operationName: 'me',
+                    query: MUTATE_testResolver,
+                    operationName: 'testResolver',
                 },
                 buildContext()
             );
